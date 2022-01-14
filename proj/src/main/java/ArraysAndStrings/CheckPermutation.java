@@ -7,27 +7,24 @@ import java.util.Hashtable;
 public class CheckPermutation {
     // time O(N), space O(N)
     public static boolean checkPermutation_v1(String strA, String strB) {
+        if (strA.length() != strB.length()) {
+            return false;       // Permutation must be same length.
+        }
         Hashtable<Character, Integer> characterCounter = new Hashtable<>();
         for (int i = 0; i < strA.length(); i++) {
             char key = strA.charAt(i);
-            if (characterCounter.containsKey(key)) {
-                characterCounter.put(key, characterCounter.get(key) + 1);
-            } else {
-                characterCounter.put(key, 1);
-            }
+            characterCounter.put(key, characterCounter.getOrDefault(key, 0) + 1);
         }
+
         for (int i = 0; i < strB.length(); i++) {
             char key = strB.charAt(i);
-            if (!characterCounter.containsKey(key) || 0 == characterCounter.get(key)) {
+            characterCounter.put(key, characterCounter.getOrDefault(key, 0) - 1);
+            if (characterCounter.get(key) < 0) {
                 return false;
             }
-            characterCounter.put(key, characterCounter.get(key)-1);
         }
-        int nCount = 0;
-        for (int v : characterCounter.values()) {
-            nCount += v;
-        }
-        return 0 == nCount;
+        return true;
+
     }
 
     // assume elements in str are characters (ascII, 0-255)
@@ -40,16 +37,12 @@ public class CheckPermutation {
         }
         for (int i = 0; i < strB.length(); i++) {
             int c = strB.charAt(i);
-            if (0 == counts[c]) {
+            counts[c]--;
+            if (counts[c] < 0) {
                 return false;
             }
-            counts[c]--;
         }
-        int nCount = 0;
-        for (int i = 0; i < 256; i++) {
-            nCount += counts[i];
-        }
-        return 0 == nCount;
+        return true;
     }
 
     // solutions from book
