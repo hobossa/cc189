@@ -10,24 +10,31 @@ package ArraysAndStrings;
 // Output:    "Mr%20John%20Smith"
 // Hints: #53, #118
 
+import java.util.Arrays;
+
 public class URLify {
 
     // time O(N), space O(N)
     public static void URLify_v1(char[] url, int len) {
-        char[] temp = new char[len];
-        System.arraycopy(url, 0, temp, 0, len);
-        // for (int i = 0; i < len; i++) {
-        //     temp[i] = url[i];
-        // }
-
-        int j = 0;
+        // do it from end to start, so that we can do it in place
+        int nSpace = 0;
         for (int i = 0; i < len; i++) {
-            if (temp[i] == ' ') {
-                url[j++] = '%';
-                url[j++] = '2';
-                url[j++] = '0';
+            if (url[i] == ' ') {
+                nSpace++;
+            }
+        }
+        int lenAfter = len + 2 * nSpace;
+        if (lenAfter < url.length ) {
+            url[lenAfter] = '\0';
+        }
+        lenAfter--;
+        for (int i = len-1; i >=0 ; i--) {
+            if (url[i] == ' ') {
+                url[lenAfter--] = '0';
+                url[lenAfter--] = '2';
+                url[lenAfter--] = '%';
             } else {
-                url[j++] = temp[i];
+                url[lenAfter--] = url[i];
             }
         }
     }
@@ -65,12 +72,23 @@ public class URLify {
         return -1;
     }
 
+    public static String charArrayToString(char[] arr) {
+        StringBuilder strBuilder = new StringBuilder();
+        for (char c: arr) {
+            if (c == '\0') {
+                break;
+            }
+            strBuilder.append(c);
+        }
+        return strBuilder.toString();
+    }
+
     public static void main(String[] args) {
-        String url = "MR John Smith         ";
+        String url = "MR John Smith            ";
         char[] arr = url.toCharArray();
-        // URLify_v1(arr, 13);
-        int trueLength = findLastCharacter(arr) + 1;
-        URLify_s1(arr, trueLength);
-        System.out.println(arr);
+        URLify_v1(arr, 13);
+        // int trueLength = findLastCharacter(arr) + 1;
+        // URLify_s1(arr, trueLength);
+        System.out.println(charArrayToString(arr));
     }
 }
