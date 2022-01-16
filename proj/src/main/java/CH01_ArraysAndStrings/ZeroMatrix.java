@@ -1,9 +1,7 @@
-package ArraysAndStrings;
+package CH01_ArraysAndStrings;
 
 // Write an algorithm such that if an element in an M x N matrix is 0, its entire row and column are set to 0.
 // Hints: #17, #74, #102
-
-import java.util.HashSet;
 
 public class ZeroMatrix {
     public static void nullifyRow(int[][] matrix, int row) {

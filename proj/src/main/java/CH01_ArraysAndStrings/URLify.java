@@ -1,4 +1,4 @@
-package ArraysAndStrings;
+package CH01_ArraysAndStrings;
 
 // Write a method to replace all spaces in a string with '%20'. You may assume that the string
 // has sufficient space at the end to hold the additional characters, and that you are given the "true"
@@ -9,8 +9,6 @@ package ArraysAndStrings;
 // Input:     "Mr John Smith     ", 13
 // Output:    "Mr%20John%20Smith"
 // Hints: #53, #118
-
-import java.util.Arrays;
 
 public class URLify {
 

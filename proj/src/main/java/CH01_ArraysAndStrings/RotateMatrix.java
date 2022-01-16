@@ -1,10 +1,8 @@
-package ArraysAndStrings;
+package CH01_ArraysAndStrings;
 
 // Given an image represented by an N x N Matrix, where each pixel in the mage is 4 bytes, write a method to rotate
 // the image by 90 degrees. Can you do this in place?
 // Hints: #51, # 100
-
-import java.util.Arrays;
 
 public class RotateMatrix {
 
