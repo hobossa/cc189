@@ -83,8 +83,7 @@ public class RotateMatrix {
             strBuilder.append(":\n");
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < n; j++) {
-                    strBuilder.append(pixels[i][j]);
-                    strBuilder.append(' ');
+                    strBuilder.append(String.format("%3d", pixels[i][j]));
                 }
                 strBuilder.append('\n');
             }
