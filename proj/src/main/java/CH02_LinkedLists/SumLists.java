@@ -101,8 +101,6 @@ public class SumLists {
     }
 
     // version 4, tail recursive.
-    // using tail recursive cannot get much benefit in this case, because each recursive only has one recursive call
-    // into the next level.
     public static LinkedListNode SumR_v4(LinkedListNode a, LinkedListNode b) {
         return SumRInner_v4(a, b, 0, null, null);
     }
