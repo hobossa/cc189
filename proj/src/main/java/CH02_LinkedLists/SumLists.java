@@ -126,17 +126,13 @@ public class SumLists {
     // FOLLOW UP
     // For the follow-up question, you can reverse the list first.
     public static LinkedListNode reverseList(LinkedListNode head) {
-        LinkedListNode ret = null;
+        if (head == null) return null;
+        LinkedListNode ret = new LinkedListNode(head.data);
         LinkedListNode temp;
-        while (head != null) {
-            if (ret == null) {
-                ret = new LinkedListNode(head.data);
-            } else {
-                temp = new LinkedListNode(head.data);
-                temp.next = ret;
-                ret = temp;
-
-            }
+        while (head.next != null) {
+            temp = new LinkedListNode(head.next.data);
+            temp.next = ret;
+            ret = temp;
             head = head.next;
         }
         return ret;
