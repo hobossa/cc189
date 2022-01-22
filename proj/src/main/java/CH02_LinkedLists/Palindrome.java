@@ -9,7 +9,7 @@ import Common.LinkedListNode;
 import java.util.Stack;
 
 public class Palindrome {
-    
+
     // version 1, get a reverse list and compare
     // time O(n), space O(n)
     public static boolean isPalindrome_v1(LinkedListNode head) {
