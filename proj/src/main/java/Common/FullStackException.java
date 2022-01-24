@@ -1,4 +1,4 @@
-package CH03_StacksAndQueues.ThreeInOneStack;
+package Common;
 
 public class FullStackException extends RuntimeException{
     public FullStackException() {

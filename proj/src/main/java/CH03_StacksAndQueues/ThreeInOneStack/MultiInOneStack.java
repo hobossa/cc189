@@ -1,6 +1,8 @@
 package CH03_StacksAndQueues.ThreeInOneStack;
 
 
+import Common.FullStackException;
+
 import java.util.EmptyStackException;
 
 // similar to FixedMultiInOneStack, but allow flexible divisions (shift divisions when needed).

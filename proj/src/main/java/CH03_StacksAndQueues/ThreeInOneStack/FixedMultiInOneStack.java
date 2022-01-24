@@ -1,5 +1,7 @@
 package CH03_StacksAndQueues.ThreeInOneStack;
 
+import Common.FullStackException;
+
 import java.util.EmptyStackException;
 
 public class FixedMultiInOneStack<T> {
