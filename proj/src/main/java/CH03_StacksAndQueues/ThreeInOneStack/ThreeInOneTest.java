@@ -1,6 +1,8 @@
 package CH03_StacksAndQueues.ThreeInOneStack;
 
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class ThreeInOneTest {
     public static void testV1() {
         ThreeInOneStackV1<Integer> fixedStack = new ThreeInOneStackV1<>(5);
@@ -111,7 +113,80 @@ public class ThreeInOneTest {
         System.out.println();
     }
 
+    public static void testV3() {
+        ThreeInOneStackV3<Integer> flexStack = new ThreeInOneStackV3<>(5);
+        
+        int i1 = 100;
+        int i2 = 200;
+        int i3 = 300;
+
+        for (int i = 0; i < 30; i++) {
+            int r = ThreadLocalRandom.current().nextInt(0, 3);
+            if (0 == r) {
+                flexStack.push1st(i1++);
+            } else if (1 == r) {
+                flexStack.push2nd(i2++);
+            } else if (2 == r) {
+                flexStack.push3rd(i3++);
+            }
+        }
+
+        for (int i = 0; i < 15; i++) {
+            int r = ThreadLocalRandom.current().nextInt(0, 3);
+            if (0 == r && !flexStack.isEmpty1st()) {
+                i1--;
+                flexStack.pop1st();
+            } else if (1 == r && !flexStack.isEmpty2nd()) {
+                i2--;
+                flexStack.pop2nd();
+            } else if (2 == r && !flexStack.isEmpty3rd()) {
+                i3--;
+                flexStack.pop3rd();
+            }
+        }
+
+        for (int i = 0; i < 50; i++) {
+            int r = ThreadLocalRandom.current().nextInt(0, 3);
+            if (0 == r) {
+                flexStack.push1st(i1++);
+            } else if (1 == r) {
+                flexStack.push2nd(i2++);
+            } else if (2 == r) {
+                flexStack.push3rd(i3++);
+            }
+        }
+
+        for (int i = 0; i < 20; i++) {
+            int r = ThreadLocalRandom.current().nextInt(0, 3);
+            if (0 == r && !flexStack.isEmpty1st()) {
+                i1--;
+                flexStack.pop1st();
+            } else if (1 == r && !flexStack.isEmpty2nd()) {
+                i2--;
+                flexStack.pop2nd();
+            } else if (2 == r && !flexStack.isEmpty3rd()) {
+                i3--;
+                flexStack.pop3rd();
+            }
+        }
+
+        while (!flexStack.isEmpty1st()) {
+            System.out.println(flexStack.pop1st());
+        }
+        System.out.println();
+
+        while (!flexStack.isEmpty2nd()) {
+            System.out.println(flexStack.pop2nd());
+        }
+        System.out.println();
+
+        while (!flexStack.isEmpty3rd()) {
+            System.out.println(flexStack.pop3rd());
+        }
+        System.out.println();
+    }
+    
     public static void main(String[] args) {
-        testV2();
+        testV3();
     }
 }
