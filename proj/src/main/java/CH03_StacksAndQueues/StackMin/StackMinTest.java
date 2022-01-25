@@ -9,49 +9,23 @@ package CH03_StacksAndQueues.StackMin;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class StackMinTest {
-    public static void testV1() {
-
-        StackMin_v1<Integer> stackMin = new StackMin_v1<>(100);
+    public static void test(IStackMin<Integer> stack) {
         int min = Integer.MAX_VALUE;
         for (int i = 0; i < 20; i++) {
             int r = ThreadLocalRandom.current().nextInt(0, 1000);
             if ( r < min ) min = r;
-            stackMin.push(r);
-            System.out.println(stackMin.min());
+            stack.push(r);
+            System.out.println(stack.min());
             System.out.println(min);
         }
-        System.out.println(stackMin.min());
-    }
+        System.out.println(stack.min());
 
-    public static void testV2() {
-
-        StackMin_v2<Integer> stackMin = new StackMin_v2<>();
-        int min = Integer.MAX_VALUE;
-        for (int i = 0; i < 20; i++) {
-            int r = ThreadLocalRandom.current().nextInt(0, 1000);
-            if ( r < min ) min = r;
-            stackMin.push(r);
-            System.out.println(stackMin.min());
-            System.out.println(min);
-        }
-        System.out.println(stackMin.min());
-    }
-
-    public static void testV3() {
-
-        StackMin_v3<Integer> stackMin = new StackMin_v3<>();
-        int min = Integer.MAX_VALUE;
-        for (int i = 0; i < 20; i++) {
-            int r = ThreadLocalRandom.current().nextInt(0, 1000);
-            if ( r < min ) min = r;
-            stackMin.push(r);
-            System.out.println(stackMin.min());
-            System.out.println(min);
-        }
-        System.out.println(stackMin.min());
     }
 
     public static void main(String[] args) {
-        testV3();
+        StackMin_v1<Integer> stackMin1 = new StackMin_v1<>(100);
+        // StackMin_v2<Integer> stackMin2 = new StackMin_v2<>();
+        // StackMin_v3<Integer> stackMin3 = new StackMin_v3<>();
+        test(stackMin1);
     }
 }

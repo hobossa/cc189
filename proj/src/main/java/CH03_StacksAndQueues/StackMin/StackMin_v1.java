@@ -4,7 +4,7 @@ import Common.FullStackException;
 
 import java.util.EmptyStackException;
 
-public class StackMin_v1<T extends Comparable<? super T>> {
+public class StackMin_v1<T extends Comparable<? super T>> implements IStackMin<T> {
     private final int capacity;
     private int size;
     private InnerItem[] data;
@@ -34,7 +34,7 @@ public class StackMin_v1<T extends Comparable<? super T>> {
     }
 
     @SuppressWarnings("unchecked")
-    public void push(T t) {
+    public T push(T t) {
         if (isFull()) {
             throw new FullStackException();
         }
@@ -46,6 +46,7 @@ public class StackMin_v1<T extends Comparable<? super T>> {
             }
         }
         data[size++] = new InnerItem(t, curMin);
+        return t;
     }
 
     @SuppressWarnings("unchecked")

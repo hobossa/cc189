@@ -2,11 +2,11 @@ package CH03_StacksAndQueues.StackMin;
 
 import java.util.Stack;
 
-public class StackMin_v3<E extends Comparable<? super E>>  {
+public class StackMin_v3<E extends Comparable<? super E>> implements IStackMin<E> {
 
-    private Stack<E> innerStack;
+    private final Stack<E> innerStack;
     // use a dedicated stack to save current min element;
-    private Stack<E> minStack;
+    private final Stack<E> minStack;
 
     public StackMin_v3() {
         innerStack = new Stack<>();

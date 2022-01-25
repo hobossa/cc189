@@ -3,9 +3,9 @@ package CH03_StacksAndQueues.StackMin;
 import java.util.Stack;
 
 
-public class StackMin_v2<E extends Comparable<? super E>> {
+public class StackMin_v2<E extends Comparable<? super E>> implements IStackMin<E>{
 
-    private class InnerNode<E> {
+    private static class InnerNode<E> {
         E item;
         E min;
 
@@ -14,7 +14,7 @@ public class StackMin_v2<E extends Comparable<? super E>> {
             this.min = min;
         }
     }
-    private Stack<InnerNode<E>> innerStack;
+    private final Stack<InnerNode<E>> innerStack;
 
     public StackMin_v2() {
         innerStack = new Stack<>();
