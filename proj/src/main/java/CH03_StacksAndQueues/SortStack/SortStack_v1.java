@@ -3,6 +3,7 @@ package CH03_StacksAndQueues.SortStack;
 import java.util.Stack;
 
 // brute force:  time O(n*n), space O(n)
+// similar to Selection Sort, average, best, worst time complexity are the same, O(n*n)
 public class SortStack_v1<T extends Comparable<? super T>> {
 
     private final Stack<T> tempStack;

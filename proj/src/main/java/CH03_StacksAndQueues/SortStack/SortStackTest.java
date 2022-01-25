@@ -18,8 +18,9 @@ public class SortStackTest {
             System.out.println(v);
         }
         System.out.println();
-        SortStack_v1<Integer> sort1 = new SortStack_v1<>();
-        sort1.sort(testStack);
+        // SortStack_v1<Integer> sort1 = new SortStack_v1<>();
+        // sort1.sort(testStack);
+        SortStack_v2.sort(testStack);
         while (!testStack.empty()) {
             System.out.println(testStack.pop());
         }
