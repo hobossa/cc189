@@ -23,7 +23,35 @@ public class StackMinTest {
         System.out.println(stackMin.min());
     }
 
+    public static void testV2() {
+
+        StackMin_v2<Integer> stackMin = new StackMin_v2<>();
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < 20; i++) {
+            int r = ThreadLocalRandom.current().nextInt(0, 1000);
+            if ( r < min ) min = r;
+            stackMin.push(r);
+            System.out.println(stackMin.min());
+            System.out.println(min);
+        }
+        System.out.println(stackMin.min());
+    }
+
+    public static void testV3() {
+
+        StackMin_v3<Integer> stackMin = new StackMin_v3<>();
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < 20; i++) {
+            int r = ThreadLocalRandom.current().nextInt(0, 1000);
+            if ( r < min ) min = r;
+            stackMin.push(r);
+            System.out.println(stackMin.min());
+            System.out.println(min);
+        }
+        System.out.println(stackMin.min());
+    }
+
     public static void main(String[] args) {
-        testV1();
+        testV3();
     }
 }
