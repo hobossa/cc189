@@ -1,5 +1,7 @@
 package CH04_TreesAndGraphs.MinimalTree;
 
+import Common.BiTreeNode;
+
 // The question is to generate a minimal tree from a sorted array.
 // a minimal tree (not a complete tree).
 // so we can let the number of nodes in the left child is not less than it in the right child.

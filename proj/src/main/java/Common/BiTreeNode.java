@@ -1,4 +1,4 @@
-package CH04_TreesAndGraphs.MinimalTree;
+package Common;
 
 public class BiTreeNode<E> {
     E element;

@@ -4,6 +4,8 @@ package CH04_TreesAndGraphs.MinimalTree;
 // search tree with minimal height.
 // Hints:: #19, #73, #116
 
+import Common.BiTreeNode;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 public class MinimalTreeTest {
