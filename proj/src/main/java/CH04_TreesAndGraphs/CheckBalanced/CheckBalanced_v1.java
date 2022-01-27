@@ -6,16 +6,20 @@ import Common.BiTreeNode;
 // It's not efficient, because the height of subtrees are calculated many times.
 public class CheckBalanced_v1 {
     public static <E> boolean isBalanced(BiTreeNode<E> root) {
+        //System.out.println("isBalanced");
         if (null == root) return true;
         return isBalanced(root.left)
                 && isBalanced(root.right)
                 && (Math.abs(height(root.left) - height(root.right)) <= 1);
     }
 
-    private static <E> int height(BiTreeNode<E> root) {
-        if (null == root) {
+    private static <E> int height(BiTreeNode<E> node) {
+
+        if (null == node) {
+            //System.out.println("height null");
             return 0;
         }
-        return 1 + Math.max(height(root.left), height(root.right));
+        //System.out.println("height " + node.element.toString());
+        return 1 + Math.max(height(node.left), height(node.right));
     }
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class BiTreeNode<E> {
-    E element;
+    public E element;
     public BiTreeNode<E> left;
     public BiTreeNode<E> right;
 
