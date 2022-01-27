@@ -4,7 +4,6 @@ package CH04_TreesAndGraphs.CheckBalanced;
 // is defined to be a tree such that the heights of the two subtrees of any node never differ by more than one.
 // Hints: #21, #33, #49, #105, #124
 
-import CH04_TreesAndGraphs.ListOfDepths.ListOfDepths_v1;
 import Common.BiTreeNode;
 
 import java.util.ArrayList;
@@ -14,8 +13,8 @@ import java.util.concurrent.ThreadLocalRandom;
 public class CheckBalancedTest {
 
     public static void main(String[] args) {
-        //int n = ThreadLocalRandom.current().nextInt(5, 15);
-        int n = 7;
+        int n = ThreadLocalRandom.current().nextInt(5, 15);
+        // int n = 7;
         Integer[] arr = new Integer[n];
         for (int i = 0; i < n; i++) {
             arr[i] = i;
