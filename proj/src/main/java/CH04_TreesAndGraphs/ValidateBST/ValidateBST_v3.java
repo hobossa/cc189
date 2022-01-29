@@ -26,14 +26,15 @@ public class ValidateBST_v3 {
         }
 
         if (null != lastElement) {
+            // System.out.println(lastElement + " " + goLeft + " " + node.element);
             if (goLeft) {
                 // the lastNode is on my left child tree
-                if (((E)lastElement).compareTo(node.element) > 0) {
+                if (((E) lastElement).compareTo(node.element) > 0) {
                     return false;
                 }
             } else {
                 // the lastNode is my parent
-                if (((E)lastElement).compareTo(node.element) >= 0) {
+                if (((E) lastElement).compareTo(node.element) >= 0) {
                     return false;
                 }
             }

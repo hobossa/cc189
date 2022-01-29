@@ -32,7 +32,7 @@ public class ValidateBST_v2 {
         }
         Result<E> r = isBSTInner(node.right);
         if (!r.isBST ||
-                (null != r.minElement && r.maxElement.compareTo(node.element) <= 0)) {
+                (null != r.minElement && r.minElement.compareTo(node.element) <= 0)) {
             return new Result<>(false, null, null);
         }
 
