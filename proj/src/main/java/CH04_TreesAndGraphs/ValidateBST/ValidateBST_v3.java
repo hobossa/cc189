@@ -8,8 +8,11 @@ public class ValidateBST_v3 {
 
     // solution from book
     // traverse the tree using an in-order traversal (left, current, right).
-    // when it is go left child, the last node should not be greater than current node.
-    // when it is go right child, the last node should not be equal to or greater than current node.
+    // there are two scenarios continuously alternating here.
+    // 1, the last Element is on the current node's left child tree.
+    //    the last element should not be greater than the current
+    // 2. current element is on the last Element's right child tree.
+    //    the last element should not be greater than or equal to the curren
 
     public static <E extends Comparable<? super E>> boolean isBST(BiTreeNode<E> root) {
         return isBSTInner(root);
