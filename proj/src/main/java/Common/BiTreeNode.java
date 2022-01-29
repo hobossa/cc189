@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 public class BiTreeNode<E> {
     public E element;
+    public BiTreeNode<E> parent;
     public BiTreeNode<E> left;
     public BiTreeNode<E> right;
 
@@ -32,9 +33,11 @@ public class BiTreeNode<E> {
         BiTreeNode<E> node = new BiTreeNode<>(sortedArray[i]);
         if (startIndex < i) {
             node.left = createBSTFromSortedArray(sortedArray, startIndex, i - 1);
+            node.left.parent = node;
         }
         if (i < endIndex) {
             node.right = createBSTFromSortedArray(sortedArray, i + 1, endIndex);
+            node.right.parent = node;
         }
         return node;
     }
@@ -66,12 +69,14 @@ public class BiTreeNode<E> {
         if (element.compareTo(node.element) <= 0) {
             if (null == node.left) {
                 node.left = new BiTreeNode<>(element);
+                node.left.parent = node;
             } else {
                 insert(node.left, element);
             }
         } else {
             if (null == node.right) {
                 node.right = new BiTreeNode<>(element);
+                node.right.parent = node;
             } else {
                 insert(node.right, element);
             }
