@@ -18,6 +18,7 @@ public class ValidateBST_v3 {
         return isBSTInner(root);
     }
 
+    @SuppressWarnings("unchecked")
     public static <E extends Comparable<? super E>> boolean isBSTInner(BiTreeNode<E> node) {
 
         if (null == node) {
