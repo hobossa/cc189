@@ -14,19 +14,16 @@ public class ValidateBST_v3 {
     // 2. current element is on the last Element's right child tree.
     //    the last element should not be greater than or equal to the curren
 
-    public static <E extends Comparable<? super E>> boolean isBST(BiTreeNode<E> root) {
-        return isBSTInner(root);
-    }
 
     @SuppressWarnings("unchecked")
-    public static <E extends Comparable<? super E>> boolean isBSTInner(BiTreeNode<E> node) {
+    public static <E extends Comparable<? super E>> boolean isBST(BiTreeNode<E> node) {
 
         if (null == node) {
             return true;
         }
 
         // goLeft
-        if (!isBSTInner(node.left)) {
+        if (!isBST(node.left)) {
             return false;
         }
 
@@ -47,7 +44,7 @@ public class ValidateBST_v3 {
         }
         lastElement = node.element;
 
-        if (!isBSTInner(node.right)) {
+        if (!isBST(node.right)) {
             return false;
         }
 
