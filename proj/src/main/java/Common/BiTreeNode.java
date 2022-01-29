@@ -20,6 +20,9 @@ public class BiTreeNode<E> {
     // static methods
 
     // from MinimalTree_v1
+    // this method will create a binary search tree from a sorted array, but it wouldn't check
+    // whether the array is sorted or not.
+    // If the array was sorted, the tree created would be a BST, otherwise it would not be a BST.
     public static <E> BiTreeNode<E> createBSTFromSortedArray(E[] sortedArray) {
         return createBSTFromSortedArray(sortedArray, 0, sortedArray.length - 1);
     }
