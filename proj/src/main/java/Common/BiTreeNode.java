@@ -82,4 +82,8 @@ public class BiTreeNode<E> {
             }
         }
     }
+
+    public static <E extends Comparable<? super E>> BiTreeNode<E> find(BiTreeNode<E> root, E value) {
+        return null;
+    }
 }

@@ -4,7 +4,7 @@ import Common.BiTreeNode;
 
 public class ValidateBST_v3 {
     static Object lastElement = null;
-    static boolean isLastElementInLeftChildTree = true;
+    static int lastElementDepth = 0;
 
     // solution from book
     // traverse the tree using an in-order traversal (left, current, right).
@@ -14,22 +14,24 @@ public class ValidateBST_v3 {
     // 2. current element is on the last Element's right child tree.
     //    the last element should not be greater than or equal to the curren
 
+    public static <E extends Comparable<? super E>> boolean isBST(BiTreeNode<E> node) {
+        return isBST(node, 0);
+    }
 
     @SuppressWarnings("unchecked")
-    public static <E extends Comparable<? super E>> boolean isBST(BiTreeNode<E> node) {
-
+    public static <E extends Comparable<? super E>> boolean isBST(BiTreeNode<E> node, int depth) {
         if (null == node) {
             return true;
         }
 
         // goLeft
-        if (!isBST(node.left)) {
+        if (!isBST(node.left, depth+1)) {
             return false;
         }
 
         if (null != lastElement) {
             // System.out.println(lastElement + " " + goLeft + " " + node.element);
-            if (isLastElementInLeftChildTree) {
+            if (lastElementDepth > depth) {
                 // the lastNode is on current node's left child tree
                 if (((E) lastElement).compareTo(node.element) > 0) {
                     return false;
@@ -40,11 +42,11 @@ public class ValidateBST_v3 {
                     return false;
                 }
             }
-            isLastElementInLeftChildTree = !isLastElementInLeftChildTree;
         }
         lastElement = node.element;
+        lastElementDepth = depth;
 
-        if (!isBST(node.right)) {
+        if (!isBST(node.right, depth+1)) {
             return false;
         }
 
