@@ -83,7 +83,17 @@ public class BiTreeNode<E> {
         }
     }
 
-    public static <E extends Comparable<? super E>> BiTreeNode<E> find(BiTreeNode<E> root, E value) {
-        return null;
+    public static <E extends Comparable<? super E>> BiTreeNode<E> find(BiTreeNode<E> node, E value) {
+        if (null == node) {
+            return null;
+        }
+        if (value.compareTo(node.element) == 0) {
+            return node;
+        }
+        if (value.compareTo(node.element) <0 ) {
+            return BiTreeNode.find(node.left, value);
+        }
+
+        return BiTreeNode.find(node.right, value);
     }
 }
