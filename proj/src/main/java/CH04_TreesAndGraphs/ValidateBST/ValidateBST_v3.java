@@ -8,11 +8,13 @@ public class ValidateBST_v3 {
 
     // solution from book
     // traverse the tree using an in-order traversal (left, current, right).
-    // there are two scenarios continuously alternating here.
+    // there are two scenarios continuously alternating here. Using a static int variable to record the last element's depth.
     // 1, the last Element is on the current node's left child tree.
+    //    the last element' depth should greater than current depth
     //    the last element should not be greater than the current
     // 2. current element is on the last Element's right child tree.
-    //    the last element should not be greater than or equal to the curren
+    //    the last element's depth should smaller than current depth.
+    //    the last element should not be greater than or equal to the current
 
     public static <E extends Comparable<? super E>> boolean isBST(BiTreeNode<E> node) {
         return isBST(node, 0);
