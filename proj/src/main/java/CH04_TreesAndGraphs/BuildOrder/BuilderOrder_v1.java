@@ -7,7 +7,6 @@ import java.util.LinkedList;
 public class BuilderOrder_v1 {
     private static class Info {
         int dependencies;       // the number of projects that current project depends on.
-        HashSet<String> from;   // projects that current proj depends on
         HashSet<String> to;     // projects that depend on current proj
 
         public Info() {

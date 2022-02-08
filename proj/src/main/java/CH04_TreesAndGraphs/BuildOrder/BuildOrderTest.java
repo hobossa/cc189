@@ -42,5 +42,11 @@ public class BuildOrderTest {
         for (String s :buildOrder) {
             System.out.println(s);
         }
+
+        System.out.println();
+        String[] buildOrder2 = BuilderOrder_v2.buildOrder(projects, dependencies);
+        for (String s :buildOrder2) {
+            System.out.println(s);
+        }
     }
 }
