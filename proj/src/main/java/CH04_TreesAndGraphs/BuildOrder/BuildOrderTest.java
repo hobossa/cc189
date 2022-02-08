@@ -34,8 +34,8 @@ public class BuildOrderTest {
                 {"f", "b"},
                 {"b", "d"},
                 {"f", "a"},
-                {"d", "c"},
-                {"a", "f"}
+                {"d", "c"}//,
+                //{"a", "f"}
         };
 
         String[] buildOrder = BuilderOrder_v1.buildOrder(projects, dependencies);

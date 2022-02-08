@@ -6,11 +6,12 @@ import java.util.LinkedList;
 
 public class BuilderOrder_v1 {
     private static class Info {
+        int dependencies;       // the number of projects that current project depends on.
         HashSet<String> from;   // projects that current proj depends on
         HashSet<String> to;     // projects that depend on current proj
 
         public Info() {
-            from = new HashSet<>();
+            dependencies = 0;
             to = new HashSet<>();
         }
     }
@@ -23,7 +24,7 @@ public class BuilderOrder_v1 {
         for (String[] dependency : dependencies) {
             if (projs.containsKey(dependency[0]) && projs.containsKey(dependency[1])) {
                 projs.get(dependency[0]).to.add(dependency[1]);
-                projs.get(dependency[1]).from.add(dependency[0]);
+                projs.get(dependency[1]).dependencies++;
             } else {
                 ret[0] = "error: dependencies contains unknown projects.";
                 return ret;
@@ -33,7 +34,7 @@ public class BuilderOrder_v1 {
         while (!projs.isEmpty()) {
             String temp = null;
             for (String proj : projs.keySet()) {
-                if (projs.get(proj).from.isEmpty()) {
+                if (projs.get(proj).dependencies == 0) {
                     temp = proj;
                     break;
                 }
@@ -44,7 +45,7 @@ public class BuilderOrder_v1 {
             }
             ret[i++] = temp;
             for (String proj : projs.get(temp).to) {
-                projs.get(proj).from.remove(temp);
+                projs.get(proj).dependencies--;
             }
             projs.remove(temp);
         }
