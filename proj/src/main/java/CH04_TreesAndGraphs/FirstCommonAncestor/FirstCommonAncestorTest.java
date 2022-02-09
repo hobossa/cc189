@@ -29,5 +29,8 @@ public class FirstCommonAncestorTest {
 
         TreeNode<String> ancestor2 = FirstCommonAncestor_v2.firstCommonAncestor(nodeF, nodeD);
         System.out.println(ancestor2.getElement());
+
+        TreeNode<String> ancestor3 = FirstCommonAncestor_v3.firstCommonAncestor(nodeA, nodeF, nodeD);
+        System.out.println(ancestor3.getElement());
     }
 }
