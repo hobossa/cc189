@@ -17,6 +17,8 @@ public class ValidateBST_v3 {
     //    the last element should not be greater than or equal to the current
 
     public static <E extends Comparable<? super E>> boolean isBST(BiTreeNode<E> node) {
+        lastElement = null;
+        lastElementDepth = 0;
         return isBST(node, 0);
     }
 
