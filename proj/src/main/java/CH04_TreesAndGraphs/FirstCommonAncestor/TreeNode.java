@@ -23,15 +23,15 @@ public class TreeNode<E> {
     public TreeNode<E> addChild(TreeNode<E> node) {
         if (!children.containsKey(node.element)) {
             node.parent = this;
-            children.put(element, node);
+            children.put(node.element, node);
             return node;
         }
         return null;
     }
 
-    // public Collection<TreeNode<E>> getChildren() {
-    //     return children.values();
-    // }
+    public Collection<TreeNode<E>> getChildren() {
+        return children.values();
+    }
 
     public E getElement() {
         return element;
