@@ -5,7 +5,9 @@ package CH04_TreesAndGraphs.FirstCommonAncestor;
 // NOTE: This is not necessarily a binary search tree.
 // Hints: #10, #16, #28, #36, #46, #70, #80, #96
 
-// we should ask the interviewer whether the node has a link to its parent
+// we should ask the interviewer
+// 1. whether the node has a link to its parent
+// 2. If the 1st node is the 2nd node's parent, should we return the 1st node or the parent of the 1st node.
 
 
 import Common.BiTreeNode;
@@ -34,5 +36,8 @@ public class FirstCommonAncestorTest {
 
         BiTreeNode<String> ancestor3 = FirstCommonAncestor_v3.firstCommonAncestor(nodeA, nodeF, nodeG);
         System.out.println(ancestor3.element);
+
+        BiTreeNode<String> ancestor4 = FirstCommonAncestor_v4.firstCommonAncestor(nodeA, nodeD, nodeG);
+        System.out.println(ancestor4.element);
     }
 }
