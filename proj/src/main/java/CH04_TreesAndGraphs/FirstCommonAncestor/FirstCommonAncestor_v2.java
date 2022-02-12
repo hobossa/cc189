@@ -1,10 +1,12 @@
 package CH04_TreesAndGraphs.FirstCommonAncestor;
 
+import Common.BiTreeNode;
+
 // In this algorithm, assume that every node has a link to its parent.
 public class FirstCommonAncestor_v2 {
 
     // time O(depth).
-    public static <E> TreeNode<E> firstCommonAncestor(TreeNode<E> nodeA, TreeNode<E> nodeB) {
+    public static <E> BiTreeNode<E> firstCommonAncestor(BiTreeNode<E> nodeA, BiTreeNode<E> nodeB) {
         int depthA = depth(nodeA);
         int depthB = depth(nodeB);
         if (depthA > depthB) {
@@ -21,7 +23,7 @@ public class FirstCommonAncestor_v2 {
         return nodeA;
     }
 
-    private static <E> int depth(TreeNode<E> node) {
+    private static <E> int depth(BiTreeNode<E> node) {
         int n = 0;
         while (node != null) {
             n++;
@@ -30,7 +32,7 @@ public class FirstCommonAncestor_v2 {
         return n;
     }
 
-    private static <E> TreeNode<E> preAncestor(TreeNode<E> node, int n) {
+    private static <E> BiTreeNode<E> preAncestor(BiTreeNode<E> node, int n) {
         while (n-- > 0) {
             node = node.parent;
         }

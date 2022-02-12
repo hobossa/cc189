@@ -13,6 +13,16 @@ public class BiTreeNode<E> {
         this.element = element;
     }
 
+    public void setLeft(BiTreeNode<E> left) {
+        this.left = left;
+        left.parent = this;
+    }
+
+    public void setRight(BiTreeNode<E> right) {
+        this.right = right;
+        right.parent = this;
+    }
+
     @Override
     public String toString() {
         return " " + element.toString();

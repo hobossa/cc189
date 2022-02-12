@@ -1,5 +1,7 @@
 package CH04_TreesAndGraphs.FirstCommonAncestor;
 
+import Common.BiTreeNode;
+
 import java.util.HashSet;
 
 // In this algorithm, assume that every node has a link to its parent.
@@ -7,8 +9,8 @@ import java.util.HashSet;
 public class FirstCommonAncestor_v1 {
     // Does not meet "Avoid storing additional nodes in a data structure".
     // time O(depth)
-    public static <E> TreeNode<E> firstCommonAncestor(TreeNode<E> nodeA, TreeNode<E> nodeB) {
-        HashSet<TreeNode<E>> set = new HashSet<>();
+    public static <E> BiTreeNode<E> firstCommonAncestor(BiTreeNode<E> nodeA, BiTreeNode<E> nodeB) {
+        HashSet<BiTreeNode<E>> set = new HashSet<>();
         nodeA = nodeA.parent;
         while (nodeA != null) {
             set.add(nodeA);
