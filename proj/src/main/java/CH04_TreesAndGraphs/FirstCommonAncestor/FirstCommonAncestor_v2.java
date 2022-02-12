@@ -8,9 +8,11 @@ public class FirstCommonAncestor_v2 {
         int depthA = depth(nodeA);
         int depthB = depth(nodeB);
         if (depthA > depthB) {
-            nodeA = preAncestor(nodeA, depthA - depthB);
+            nodeA = preAncestor(nodeA, depthA - depthB + 1);
+            nodeB = nodeB.parent;
         } else {
-            nodeB = preAncestor(nodeB, depthB- depthA);
+            nodeB = preAncestor(nodeB, depthB- depthA + 1);
+            nodeA = nodeA.parent;
         }
         while (nodeA != nodeB) {
             nodeA = nodeA.parent;

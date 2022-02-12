@@ -27,10 +27,10 @@ public class FirstCommonAncestorTest {
         TreeNode<String> ancestor1 = FirstCommonAncestor_v1.firstCommonAncestor(nodeF, nodeC);
         System.out.println(ancestor1.getElement());
 
-        TreeNode<String> ancestor2 = FirstCommonAncestor_v2.firstCommonAncestor(nodeF, nodeD);
+        TreeNode<String> ancestor2 = FirstCommonAncestor_v2.firstCommonAncestor(nodeF, nodeC);
         System.out.println(ancestor2.getElement());
 
-        TreeNode<String> ancestor3 = FirstCommonAncestor_v3.firstCommonAncestor(nodeA, nodeF, nodeD);
+        TreeNode<String> ancestor3 = FirstCommonAncestor_v3.firstCommonAncestor(nodeA, nodeF, nodeC);
         System.out.println(ancestor3.getElement());
     }
 }

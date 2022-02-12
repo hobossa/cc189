@@ -17,7 +17,6 @@ public class FirstCommonAncestor_v3 {
     }
 
     public static <E> TreeNode<E> firstCommonAncestor(TreeNode<E> root, TreeNode<E> nodeA, TreeNode<E> nodeB) {
-        if (nodeA == nodeB) return nodeA;
         Result<E> r = firstCommonAncestorInner(root, nodeA, nodeB);
         return r.commonAncestor;
     }
@@ -30,7 +29,7 @@ public class FirstCommonAncestor_v3 {
                 break;
             }
             Result temp = firstCommonAncestorInner(child, nodeA, nodeB);
-            if (temp.isContainNodeA && temp.isContainNodeB) {
+            if (temp.commonAncestor != null) {
                 return temp;
             }
             if (temp.isContainNodeA) {
@@ -41,11 +40,15 @@ public class FirstCommonAncestor_v3 {
             }
         }
 
-        result.isContainNodeA = node == nodeA ? true : result.isContainNodeA;
-        result.isContainNodeB = node == nodeB ? true : result.isContainNodeB;
-
         if (result.isContainNodeA && result.isContainNodeB) {
             result.commonAncestor = node;
+        }
+
+        if (node == nodeA) {
+            result.isContainNodeA = true;
+        }
+        if (node == nodeB) {
+            result.isContainNodeB = true;
         }
 
         return result;

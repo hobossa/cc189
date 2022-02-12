@@ -9,11 +9,13 @@ public class FirstCommonAncestor_v1 {
     // time O(depth)
     public static <E> TreeNode<E> firstCommonAncestor(TreeNode<E> nodeA, TreeNode<E> nodeB) {
         HashSet<TreeNode<E>> set = new HashSet<>();
+        nodeA = nodeA.parent;
         while (nodeA != null) {
             set.add(nodeA);
             nodeA = nodeA.parent;
         }
 
+        nodeB = nodeB.parent;
         while (nodeB != null) {
             if (set.contains(nodeB)) {
                 break;
