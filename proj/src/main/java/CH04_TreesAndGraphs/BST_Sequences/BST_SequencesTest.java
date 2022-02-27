@@ -31,10 +31,22 @@ public class BST_SequencesTest {
             System.out.println(arrayList1.get(i));
         }
 
+        System.out.println();
+        System.out.println();
         LinkedList<LinkedList<BiTreeNode<Integer>>> sequences = BST_Sequences_v1.getSequences(tree);
         for( LinkedList<BiTreeNode<Integer>> seq: sequences) {
             for (BiTreeNode<Integer> e : seq) {
                 System.out.print(" " + e.element);
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+        System.out.println();
+        ArrayList<LinkedList<Integer>> sequences2 = BST_Sequences_v2.getSequences(tree);
+        for (LinkedList<Integer> seq : sequences2) {
+            for (Integer i : seq) {
+                System.out.print(" " + i);
             }
             System.out.println();
         }
