@@ -38,6 +38,10 @@ public class BiTreeNode<E> {
         return createBSTFromSortedArray(sortedArray, 0, sortedArray.length - 1);
     }
 
+    public static <E> BiTreeNode<E> createBTFromArray(E[] sortedArray) {
+        return createBSTFromSortedArray(sortedArray, 0, sortedArray.length - 1);
+    }
+
     private static <E> BiTreeNode<E> createBSTFromSortedArray(E[] sortedArray, int startIndex, int endIndex) {
         int i = (endIndex + 1 - startIndex) / 2 + startIndex;
         BiTreeNode<E> node = new BiTreeNode<>(sortedArray[i]);
