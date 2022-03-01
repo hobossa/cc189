@@ -10,6 +10,8 @@ import java.util.concurrent.ThreadLocalRandom;
 // 2. generate a random int between [0, numberOfNodes)
 // 3. use any traversal method to get the node. (in-order, pre-order, post-order)
 
+// we can ask the interviewers does the node has a size field.
+
 public class RandomNodeTest_v1 {
     private static class Result<E> {
         int counter;
@@ -45,6 +47,9 @@ public class RandomNodeTest_v1 {
         return r.node;
     }
 
+    // the way use a Result object may seem weird.
+    // we can also push the nodes in a stack until we get a certain number of nodes.
+    // then return the relative node in the stack.
     private static <E> void preOrderGetAtIndex(BiTreeNode<E> node, Result r) {
         if (r.node != null) {
             return;
