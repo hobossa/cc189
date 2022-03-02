@@ -3,6 +3,7 @@ package CH05_BitManipulation.FlipBit2Win;
 import java.util.LinkedList;
 
 public class FlipBit2Win_v1 {
+
     public static int flipBit2Win(int n) {
         //System.out.println(Integer.toBinaryString(n));
         int preBit = 0;
