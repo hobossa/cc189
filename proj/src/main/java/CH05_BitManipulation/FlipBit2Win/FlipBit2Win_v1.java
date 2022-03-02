@@ -3,6 +3,7 @@ package CH05_BitManipulation.FlipBit2Win;
 import java.util.LinkedList;
 
 public class FlipBit2Win_v1 {
+    public static int SEQUENCE_LENGTH = 32;
 
     public static int flipBit2Win(int n) {
         //System.out.println(Integer.toBinaryString(n));
@@ -13,7 +14,7 @@ public class FlipBit2Win_v1 {
         // 11001  the list is [1, 0, 2, 0]. PS: we don't care about the last 0, just leave it alone.
         LinkedList<Integer> listCount = new LinkedList<>();
         int count = 0;
-        for (int i = 0; i < 32; i++) {
+        for (int i = 0; i < SEQUENCE_LENGTH; i++) {
             int t = (1 << i) & n;
             if (t != 0) {
                 count++;
@@ -38,7 +39,7 @@ public class FlipBit2Win_v1 {
                 max = m;
             }
         }
-        max = max < 32 ? max+1: max;
+        max = max < SEQUENCE_LENGTH ? max+1: max;
         return max;
     }
 }
