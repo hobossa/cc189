@@ -27,6 +27,10 @@ public class FlipBit2Win_v1 {
             }
             preBit = t;
         }
+        // add the count of last sequence.
+        if (preBit!= 0) {
+            listCount.add(count);
+        }
         // for convenient, make sure that listCount at least has 2 elements.
         while (listCount.size() < 2) {
             listCount.add(0);
