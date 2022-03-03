@@ -14,5 +14,17 @@ public class Debugger {
             }
         }
 
+        // System.out.println();
+        // //int i = Integer.MIN_VALUE;
+        // int i = -123;
+        // System.out.println(i);
+        // System.out.println(Integer.toBinaryString(i));
+        // System.out.println(i >> 1);
+        // System.out.println(Integer.toBinaryString(i >> 1));
+        // System.out.println(i >>> 1);
+        // System.out.println(Integer.toBinaryString(i >>> 1));
+        // System.out.println(i << 1);
+        // System.out.println(Integer.toBinaryString(i << 1));
+
     }
 }
