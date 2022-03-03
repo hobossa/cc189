@@ -10,11 +10,19 @@ package CH05_BitManipulation.FlipBit2Win;
 
 public class FlipBit2WinTest {
     public static void main(String[] args) {
-        for (int i = 0; i < 32; i++) {
-            System.out.println(Integer.toBinaryString(i));
-            int max = FlipBit2Win_v1.flipBit2Win(i);
-            System.out.println(max);
-            System.out.println();
-        }
+        // for (int i = 0; i < 16; i++) {
+        //     System.out.println(Integer.toBinaryString(i));
+        //     int max1 = FlipBit2Win_v1.flipBit2Win(i);
+        //     int max2 = FlipBit2Win_v2.flipBit2Win(i);
+        //     System.out.println(max1);
+        //     System.out.println(max2);
+        //     System.out.println();
+        // }
+        int n = -1;//Integer.MAX_VALUE;
+        System.out.println(Integer.toBinaryString(n));
+        int max1 = FlipBit2Win_v1.flipBit2Win(n);
+        int max2 = FlipBit2Win_v2.flipBit2Win(n);
+        System.out.println(max1);
+        System.out.println(max2);
     }
 }
