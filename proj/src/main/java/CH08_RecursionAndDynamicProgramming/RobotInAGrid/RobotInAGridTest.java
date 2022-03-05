@@ -13,12 +13,17 @@ public class RobotInAGridTest {
     public static void main(String[] args) {
         boolean[][] grid = {
                 {true, true, true, true},
-                {true, true, false, true},
                 {true, true, true, false},
-                {false, false, true, true}
+                {true, true, false, false},
+                {false, true, true, false},
+                {false, true, true, true}
         };
 
-        ArrayList<Point> path = RobotInAGrid_v1.getPath(grid);
-        System.out.println(path);
+        ArrayList<Point> path1 = RobotInAGrid_v1.getPath(grid);
+        System.out.println(path1);
+        ArrayList<Point> path2 = RobotInAGrid_v2.getPath(grid); // this solution get the reverse path.
+        System.out.println(path2);
+        ArrayList<Point> path3 = RobotInAGrid_v3.getPath(grid); // this solution get the reverse path.
+        System.out.println(path3);
     }
 }
