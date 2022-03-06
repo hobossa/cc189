@@ -9,7 +9,7 @@ public class PowerSet_v1 {
     // Recursion approach
     public static ArrayList<Set<Integer>> allSubsets(Set<Integer> set) {
         ArrayList<Set<Integer>> subsets = new ArrayList<>();
-        subsets.add(new HashSet<>());   // add an empty set.
+        subsets.add(new HashSet<>());   // add an empty set. an empty set is the subset of any set.
         allSubSets(set, subsets);
         return subsets;
     }
