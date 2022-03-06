@@ -15,8 +15,14 @@ public class PowerSetTest {
             set.add(i);
         }
 
-        ArrayList<Set<Integer>> subsets = PowerSet_v1.allSubsets(set);
-        for (Set<Integer> subset : subsets) {
+        ArrayList<Set<Integer>> subsets1 = PowerSet_v1.allSubsets(set);
+        for (Set<Integer> subset : subsets1) {
+            System.out.println(subset);
+        }
+
+        System.out.println("////////");
+        ArrayList<Set<Integer>> subsets2 = PowerSet_v2.allSubsets(set);
+        for (Set<Integer> subset : subsets2) {
             System.out.println(subset);
         }
     }
