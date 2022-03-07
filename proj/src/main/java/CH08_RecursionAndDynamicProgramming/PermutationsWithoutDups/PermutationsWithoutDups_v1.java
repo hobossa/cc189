@@ -4,6 +4,7 @@ import jdk.dynalink.beans.StaticClass;
 
 import java.util.ArrayList;
 
+// Approach version 1: Building from permutations of first n-1 characters.
 public class PermutationsWithoutDups_v1 {
 
     // Tail Recursion approach

@@ -11,11 +11,18 @@ import java.util.ArrayList;
 
 public class PermutationsWithoutDupsTest {
     public static void main(String[] args) {
-        String str = "abcd";
+        String str = "abc";
 
-        ArrayList<String> permutations = PermutationsWithoutDups_v1.permutations(str);
-        System.out.println("There are " + permutations.size() + " permutations of " + str +".");
-        for(String s : permutations) {
+        ArrayList<String> permutations1 = PermutationsWithoutDups_v1.permutations(str);
+        System.out.println("There are " + permutations1.size() + " permutations of " + str +".");
+        for(String s : permutations1) {
+            System.out.println(s);
+        }
+        System.out.println();
+
+        ArrayList<String> permutations2 = PermutationsWithoutDups_v2.permutations(str);
+        System.out.println("There are " + permutations2.size() + " permutations of " + str +".");
+        for(String s : permutations2) {
             System.out.println(s);
         }
     }
