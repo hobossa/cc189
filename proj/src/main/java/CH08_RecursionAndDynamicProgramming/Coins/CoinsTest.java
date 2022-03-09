@@ -10,16 +10,12 @@ public class CoinsTest {
     public static void main(String[] args) {
         int[] coinDenominations = {5, 1, 10, 25};
 
-        for (int i = 9; i < 29; i+=7) {
-            System.out.println(i);
-            System.out.println(Coins_v4.makeChange(i, coinDenominations));
+        for (int i = 1; i < 100; i++) {
+            System.out.println("" + i + " cents: "
+                    + Coins_v1.makeChange(i) + "  "
+                    + Coins_v2.makeChange(i) + "  "
+                    + Coins_v3.makeChange(i, coinDenominations) + " "
+                    + Coins_v4.makeChange(i, coinDenominations));
         }
-
-        // for (int i = 1; i < 100; i++) {
-        //     System.out.println("" + i + " cents: "
-        //             + Coins_v1.makeChange(i) + "  "
-        //             + Coins_v2.makeChange(i) + "  "
-        //             + Coins_v3.makeChange(i, coinDenominations));
-        // }
     }
 }
