@@ -9,7 +9,8 @@ public class Coins_v4 {
     public static int makeChange(int n, int[] coinDenominations) {
         Integer[] denoms = Arrays.stream(coinDenominations).boxed().toArray(Integer[]::new);
         Arrays.sort(denoms, Collections.reverseOrder());
-        int[][] memo = new int[n+1][coinDenominations.length];
+        
+        int[][] memo = new int[n+1][denoms.length];
         return makeChangeHelper(n, denoms, 0, memo);
     }
 
