@@ -34,10 +34,13 @@ public class FirstCommonAncestorTest {
         BiTreeNode<String> ancestor2 = FirstCommonAncestor_v2.firstCommonAncestor(nodeF, nodeC);
         System.out.println(ancestor2.element);
 
-        BiTreeNode<String> ancestor3 = FirstCommonAncestor_v3.firstCommonAncestor(nodeA, nodeF, nodeG);
+        BiTreeNode<String> ancestor3 = FirstCommonAncestor_v3.firstCommonAncestor(nodeA, nodeD, nodeG);
         System.out.println(ancestor3.element);
 
         BiTreeNode<String> ancestor4 = FirstCommonAncestor_v4.firstCommonAncestor(nodeA, nodeD, nodeG);
         System.out.println(ancestor4.element);
+
+        BiTreeNode<String> ancestor5 = FirstCommonAncestor_v5.firstCommonAncestor(nodeA, nodeD, nodeG);
+        System.out.println(ancestor5.element);
     }
 }
