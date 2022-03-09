@@ -12,9 +12,9 @@ public class CoinsTest {
 
         for (int i = 1; i < 100; i++) {
             System.out.println("" + i + " cents: "
-                    + Coins_v1.ways(i) + "  "
-                    + Coins_v2.ways(i) + "  "
-                    + Coins_v3.ways(i, coinDenominations));
+                    + Coins_v1.makeChange(i) + "  "
+                    + Coins_v2.makeChange(i) + "  "
+                    + Coins_v3.makeChange(i, coinDenominations));
         }
     }
 }

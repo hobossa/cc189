@@ -13,7 +13,7 @@ package CH08_RecursionAndDynamicProgramming.Coins;
 // brute force, calculate all values int the matrix.
 public class Coins_v1 {
 
-    public static int ways(int nCents) {
+    public static int makeChange(int nCents) {
         int[][] w = new int[4][nCents+1];
 
         // in fact, we don't need to save this all value 1 array.
