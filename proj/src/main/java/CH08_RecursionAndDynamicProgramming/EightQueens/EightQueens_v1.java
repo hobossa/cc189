@@ -26,38 +26,30 @@ public class EightQueens_v1 {
 
 
     @SuppressWarnings("unchecked")
-    public static void EightQueensHelper(int row, ArrayList<ArrayList<Integer>> solutions,
+    private static void EightQueensHelper(int row, ArrayList<ArrayList<Integer>> solutions,
                                          ArrayList<Integer> colPosition, HashSet<Integer> colSet,
                                          HashSet<Integer> diagSet, HashSet<Integer> diagSetR) {
         for (int i = 0; i < 8; i++) {
-            if (colSet.contains(i)) {
-                // there is another queen on the same col
+            if (colSet.contains(i) // there is another queen on the same col
+                    || diagSet.contains(row - i)  // there is another queen on the same topLeft-bottomRight diagonal
+                    || diagSet.contains(row + i)) { // there is another queen on the same topRight-bottomLeft diagonal
                 continue;
             }
-            int d = row - i;
-            if (diagSet.contains(d)) {
-                // there is another queen on the same topLeft-bottomRight diagonal
-                continue;
-            }
-            int dR = row + i;
-            if (diagSetR.contains(dR)) {
-                // there is another queen on the same topRight-bottomLeft diagonal
-                continue;
-            }
+
             colPosition.add(i);
             colSet.add(i);
-            diagSet.add(d);
-            diagSetR.add(dR);
+            diagSet.add(row - i);
+            diagSetR.add(row + i);
             if (row + 1 >= 8) {
                 // Get a solution.
                 solutions.add((ArrayList<Integer>) colPosition.clone());
             } else {
                 EightQueensHelper(row + 1, solutions, colPosition, colSet, diagSet, diagSetR);
             }
-            colPosition.remove(colPosition.size()-1);
+            colPosition.remove(colPosition.size() - 1); // remove the last element
             colSet.remove(i);
-            diagSet.remove(d);
-            diagSetR.remove(dR);
+            diagSet.remove(row - i);
+            diagSetR.remove(row + i);
         }
     }
 }
