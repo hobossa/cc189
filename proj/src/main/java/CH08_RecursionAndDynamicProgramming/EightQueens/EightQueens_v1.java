@@ -32,7 +32,7 @@ public class EightQueens_v1 {
         for (int i = 0; i < 8; i++) {
             if (colSet.contains(i) // there is another queen on the same col
                     || diagSet.contains(row - i)  // there is another queen on the same topLeft-bottomRight diagonal
-                    || diagSet.contains(row + i)) { // there is another queen on the same topRight-bottomLeft diagonal
+                    || diagSetR.contains(row + i)) { // there is another queen on the same topRight-bottomLeft diagonal
                 continue;
             }
 
