@@ -23,21 +23,19 @@ public class StackOfBoxes_v2 {
     }
 
     private static int maxStackHeightHelper(ArrayList<Box> boxes, int bottomIndex, int[] memo) {
+        if (bottomIndex < boxes.size() && memo[bottomIndex] > 0) {
+            return memo[bottomIndex];
+        }
         Box bottom = boxes.get(bottomIndex);
         int maxHeight = 0;
         for (int i = bottomIndex+1; i < boxes.size(); i++) {
             if (boxes.get(i).canBeAbove(bottom)) {
-                int height = 0;
-                if (memo[i] >0) {
-                    height = memo[i];
-                } else {
-                    height = maxStackHeightHelper(boxes, i, memo);
-                    memo[i] = height;
-                }
+                int height = maxStackHeightHelper(boxes, i, memo);
                 maxHeight = Math.max(height, maxHeight);
             }
         }
         maxHeight += bottom.getH();
+        memo[bottomIndex] = maxHeight;
         return maxHeight;
     }
 }
