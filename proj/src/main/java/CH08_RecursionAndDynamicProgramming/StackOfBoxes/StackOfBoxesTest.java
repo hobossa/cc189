@@ -24,7 +24,7 @@ public class StackOfBoxesTest {
 
         System.out.println(StackOfBoxes_v1.maxStackHeight(boxes1));
         System.out.println(StackOfBoxes_v2.maxStackHeight(boxes1));
-
+        System.out.println(StackOfBoxes_v3.maxStackHeight(boxes1));
     }
 
     private static Box createRandomBox() {
