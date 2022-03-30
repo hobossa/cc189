@@ -2,7 +2,7 @@ package CH10_SortingAndSearching.SparseSearch;
 
 public class SparseSearch_v1 {
     public static int search(String[] array, String str) {
-        if (str.compareTo("") == 0) {
+        if (str.isEmpty()) {
             return -1;
         }
         return searchHelper(array, str, 0, array.length - 1);
@@ -14,7 +14,7 @@ public class SparseSearch_v1 {
         }
 
         int n = (s + e) / 2;
-        if (array[n].compareTo("") != 0) {
+        if (!array[n].isEmpty()) {
             if (array[n].compareTo(str) == 0) {
                 return n;
             }
