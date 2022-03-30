@@ -11,9 +11,23 @@ public class SparseSearchTest {
     public static void main(String[] args) {
         String[] stringList = {"apple", "", "", "banana", "", "", "", "carrot", "duck", "", "", "eel", "", "flower"};
         System.out.println(SparseSearch_v1.search(stringList, "ac"));
+        System.out.println(SparseSearch_v2.search(stringList, "ac"));
+
+        long l1 = System.nanoTime();
+        System.out.println(SparseSearch_v1.search(stringList, "banana"));
+        long l2 = System.nanoTime();
+        System.out.println(SparseSearch_v2.search(stringList, "banana"));
+        long l3 = System.nanoTime();
+        System.out.println("" + (l2 - l1) + " " + (l3 - l2));
+
         String[] keys = {"apple", "banana", "carrot", "duck", "eel", "flower"};
         for (String key : keys) {
+            l1 = System.nanoTime();
             System.out.println(SparseSearch_v1.search(stringList, key));
+            l2 = System.nanoTime();
+            System.out.println(SparseSearch_v2.search(stringList, key));
+            l3 = System.nanoTime();
+            System.out.println("" + (l2 - l1) + " " + (l3 - l2));
         }
     }
 }
