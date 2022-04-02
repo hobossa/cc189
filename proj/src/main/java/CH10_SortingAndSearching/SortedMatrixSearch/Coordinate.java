@@ -13,4 +13,9 @@ public class Coordinate {
         this.row = -1;
         this.col = -1;
     }
+
+    @Override
+    public String toString() {
+        return "(" + this.row + ", " + this.col + ")";
+    }
 }
