@@ -18,15 +18,16 @@ public class RankFromStreamTest {
     public static void main(String[] args) {
         int[] arr = {5, 1, 4, 4, 5, 9, 7, 13, 3};
         RankFromStream_v1 r1 = new RankFromStream_v1();
+        RankFromStream_v2 r2 = new RankFromStream_v2();
         for (int i = 0; i < arr.length; i++) {
             //int n = ThreadLocalRandom.current().nextInt(100,999);
             r1.track(arr[i]);
+            r2.track(arr[i]);
         }
-        // for (int i = 0; i < arr.length; i++) {
-        //     System.out.println(r1.getRankOfNumber(arr[i]));
-        // }
+
         for (int i = 0; i < 15; i++) {
-            System.out.println("" + i + " : " + r1.getRankOfNumber(i));
+            System.out.println("r1: " + i + " : " + r1.getRankOfNumber(i));
+            System.out.println("r2: " + i + " : " + r2.getRankOfNumber(i));
         }
     }
 }
