@@ -4,6 +4,7 @@ package CH01_ArraysAndStrings;
 // Hints: # 1, #84, #122, #131
 
 import java.util.Hashtable;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class CheckPermutation {
     // time O(N), space O(N)
@@ -12,6 +13,7 @@ public class CheckPermutation {
             return false;       // Permutation must be same length.
         }
         Hashtable<Character, Integer> characterCounter = new Hashtable<>();
+        Character[] arr = (Character[]) characterCounter.keySet().toArray();
         for (int i = 0; i < strA.length(); i++) {
             char key = strA.charAt(i);
             characterCounter.put(key, characterCounter.getOrDefault(key, 0) + 1);
@@ -24,6 +26,8 @@ public class CheckPermutation {
                 return false;
             }
         }
+
+        ThreadLocalRandom.current().nextInt();
         return true;
 
     }
